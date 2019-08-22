@@ -2,8 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const requireDir = require('require-dir');
 
-const routes = require('./src/routes');
-
 // Iniciando o App
 const app = express();
 
@@ -15,6 +13,7 @@ mongoose.connect(
 requireDir('./src/models');
 
 //Rotas
+const routes = require('./src/routes');
 app.use('/api', routes);
 
 app.listen(3000);
